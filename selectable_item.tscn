@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bmjk8b48dqtc6"]
+
+[ext_resource type="Script" uid="uid://deilofqr03t36" path="res://selectable_item.gd" id="1_qhhp8"]
+[ext_resource type="Texture2D" uid="uid://syytbhmddi06" path="res://Objects/SmallLava3.png" id="2_qhhp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ltx"]
+resource_local_to_scene = true
+size = Vector2(89, 147)
+
+[node name="SelectableItem" type="Area2D" unique_id=1562154576]
+z_index = 50
+script = ExtResource("1_qhhp8")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=220460213]
+z_index = 1
+position = Vector2(3.5, -8.5)
+shape = SubResource("RectangleShape2D_f1ltx")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1188457458]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qhhp8")
+
+[node name="Hitbox" type="ReferenceRect" parent="." unique_id=939879795]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+border_color = Color(0.21176471, 0.5686275, 0.78039217, 0.43529412)
+border_width = 2.0
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Hitbox" unique_id=1195273418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22745098, 0.36078432, 0.72156864, 0.12941177)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

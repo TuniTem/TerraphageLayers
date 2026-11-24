@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bd2qwf6g5siqo"]
+
+[ext_resource type="Script" uid="uid://bgc3sqbry0m10" path="res://selectable_enemy.gd" id="1_6avd8"]
+[ext_resource type="Texture2D" uid="uid://1almtcrprajq" path="res://Enemies/Spewer.png" id="2_6avd8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ltx"]
+size = Vector2(60.666668, 122)
+
+[node name="SelectableEnemy" type="Area2D" unique_id=1562154576]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_6avd8")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=220460213]
+z_index = 1
+position = Vector2(69.66667, -6.999999)
+shape = SubResource("RectangleShape2D_f1ltx")
+debug_color = Color(0.6998691, 0.27723795, 1, 0.41960785)
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1188457458]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_6avd8")
+
+[node name="Hitbox" type="ReferenceRect" parent="." unique_id=939879795]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Chance" type="Label" parent="." unique_id=975445438]
+modulate = Color(0.8504887, 0, 0.33882466, 1)
+custom_minimum_size = Vector2(200, 0)
+offset_left = -2.6666667
+offset_top = 44.666668
+offset_right = 197.33333
+offset_bottom = 89.66667
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 32
+text = "100%"
+horizontal_alignment = 2

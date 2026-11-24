@@ -1,3 +1,533 @@
 [gd_scene format=3 uid="uid://c3scnkvykne7q"]
 
-[node name="Main" type="Node2D" unique_id=899001263]
+[ext_resource type="PackedScene" uid="uid://bd2qwf6g5siqo" path="res://selectable_enemy.tscn" id="2_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bmjk8b48dqtc6" path="res://selectable_item.tscn" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://d1i5fdl8310f3" path="res://LevelDeco/Wall.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://tggic6b1d17w" path="res://LevelDeco/BG.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dxyvt1b28h7ja" path="res://main.gd" id="4_lquwl"]
+[ext_resource type="Theme" uid="uid://65r66apcwgo1" path="res://theme.tres" id="5_lquwl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.22352941, 0.10980392, 0.26666668, 0.9607843)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.38993654, 0.11125947, 0.13651782, 0.38431373)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.49803922, 0.18039216, 0.25490198, 0.38039216)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.015686275, 0.015686275, 0.015686275, 0.84313726)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1584723, 0.15847233, 0.15847224, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Main" type="Node2D" unique_id=899001263 node_paths=PackedStringArray("placed_items", "help", "background_objects", "saved_indicator", "layer_end")]
+script = ExtResource("4_lquwl")
+placed_items = NodePath("PlacedItems")
+help = NodePath("Control/Help")
+background_objects = NodePath("BackgroundObjects")
+saved_indicator = NodePath("SavedIndicator")
+layer_end = NodePath("BackgroundObjects/LayerEnd")
+
+[node name="Placeables" type="Node2D" parent="." unique_id=1379514687]
+
+[node name="SelectableEnemy" parent="Placeables" unique_id=1562154576 instance=ExtResource("2_7mycd")]
+position = Vector2(1202, 936)
+scale = Vector2(0.7, 0.7)
+item = "Goober"
+
+[node name="SelectableEnemy2" parent="Placeables" unique_id=544964268 instance=ExtResource("2_7mycd")]
+position = Vector2(956.00006, 879)
+item = "Bouncer"
+
+[node name="SelectableEnemy3" parent="Placeables" unique_id=1740382934 instance=ExtResource("2_7mycd")]
+position = Vector2(1334, 887.00006)
+item = "Spewer"
+
+[node name="BigWall" parent="Placeables" unique_id=52920753 instance=ExtResource("3_7mycd")]
+position = Vector2(921, 410)
+item = "BigWall"
+
+[node name="SmallWall" parent="Placeables" unique_id=1702220621 instance=ExtResource("3_7mycd")]
+position = Vector2(1199, 678)
+item = "SmallWall"
+
+[node name="BigBlock" parent="Placeables" unique_id=983041728 instance=ExtResource("3_7mycd")]
+position = Vector2(1259, 143)
+item = "BigBlock"
+
+[node name="SmallBlock" parent="Placeables" unique_id=847959321 instance=ExtResource("3_7mycd")]
+position = Vector2(1635, 165)
+item = "SmallBlock"
+
+[node name="BigLava" parent="Placeables" unique_id=337797221 instance=ExtResource("3_7mycd")]
+position = Vector2(1654, 506)
+item = "BigLava"
+
+[node name="SmallLava" parent="Placeables" unique_id=1107363773 instance=ExtResource("3_7mycd")]
+position = Vector2(1652, 831)
+item = "SmallLava"
+
+[node name="BigFlat" parent="Placeables" unique_id=1494595388 instance=ExtResource("3_7mycd")]
+position = Vector2(1290, 373)
+item = "BigFlat"
+
+[node name="SmallFlat" parent="Placeables" unique_id=347398458 instance=ExtResource("3_7mycd")]
+position = Vector2(1433, 646)
+item = "SmallFlat"
+
+[node name="SavedIndicator" type="Label" parent="." unique_id=36142638]
+z_index = 213
+offset_left = 9.0
+offset_top = 941.0
+offset_right = 185.0
+offset_bottom = 1018.0
+theme_override_font_sizes/font_size = 56
+text = "Saved!"
+
+[node name="BackgroundObjects" type="Node2D" parent="." unique_id=120597139]
+
+[node name="ButtonMargins" type="MarginContainer" parent="BackgroundObjects" unique_id=265820444]
+custom_minimum_size = Vector2(718, 1026)
+custom_maximum_size = Vector2(718, 1026)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 718.0
+offset_bottom = 1026.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = -3
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = -3
+
+[node name="EnterButtons" type="HBoxContainer" parent="BackgroundObjects/ButtonMargins" unique_id=343427693]
+unique_name_in_owner = true
+z_index = 118
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="EnterLeft" type="Button" parent="BackgroundObjects/ButtonMargins/EnterButtons" unique_id=138402216]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_lquwl")
+toggle_mode = true
+text = "Enter Left"
+
+[node name="EnterMiddle" type="Button" parent="BackgroundObjects/ButtonMargins/EnterButtons" unique_id=1568440581]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_lquwl")
+toggle_mode = true
+text = "Enter Middle"
+
+[node name="EnterRight" type="Button" parent="BackgroundObjects/ButtonMargins/EnterButtons" unique_id=1500160147]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_lquwl")
+toggle_mode = true
+button_pressed = true
+text = "Enter Right"
+
+[node name="LayerEnd" type="Node2D" parent="BackgroundObjects" unique_id=454257680]
+position = Vector2(0, 1150)
+
+[node name="ColorRect3" type="ColorRect" parent="BackgroundObjects/LayerEnd" unique_id=524462400]
+offset_left = -110.0
+offset_top = -2.0
+offset_right = 762.0
+offset_bottom = 2.0
+color = Color(0.6666667, 0.80784315, 0.10980392, 1)
+
+[node name="Label" type="Label" parent="BackgroundObjects/LayerEnd/ColorRect3" unique_id=923780280]
+z_index = 212
+layout_mode = 0
+offset_left = 287.0
+offset_top = 7.0
+offset_right = 679.0
+offset_bottom = 30.0
+text = "Layer ends (press L to set at mouse)"
+horizontal_alignment = 1
+
+[node name="Wall" type="Sprite2D" parent="BackgroundObjects" unique_id=950024442]
+z_index = 118
+position = Vector2(657, 512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Wall2" type="Sprite2D" parent="BackgroundObjects" unique_id=105019301]
+z_index = 118
+position = Vector2(61, 512)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Bg" type="Sprite2D" parent="BackgroundObjects" unique_id=919537099]
+z_index = -2
+position = Vector2(360.00003, 583)
+scale = Vector2(0.60027856, 0.60027856)
+texture = ExtResource("4_1bvp3")
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundObjects" unique_id=206918229]
+offset_left = -67.0
+offset_top = -4.0
+offset_right = 789.0
+offset_bottom = 3.0
+color = Color(0.5192663, 5.7756904e-07, 0.2849441, 1)
+
+[node name="Label" type="Label" parent="BackgroundObjects/ColorRect" unique_id=193512290]
+layout_mode = 0
+offset_left = 229.0
+offset_top = -24.0
+offset_right = 621.0
+offset_bottom = -1.0
+text = "Layer starts here (can build slightly above this line)"
+
+[node name="Wall3" type="Sprite2D" parent="BackgroundObjects" unique_id=1724675701]
+z_index = 118
+position = Vector2(657, 1538.8857)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Wall4" type="Sprite2D" parent="BackgroundObjects" unique_id=67884778]
+z_index = 118
+position = Vector2(61, 1538.8857)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Bg2" type="Sprite2D" parent="BackgroundObjects" unique_id=71764050]
+z_index = -2
+position = Vector2(360.00003, 1526.8857)
+scale = Vector2(0.60027856, 0.60027856)
+texture = ExtResource("4_1bvp3")
+
+[node name="ColorRect2" type="ColorRect" parent="BackgroundObjects" unique_id=582136705]
+z_index = 108
+offset_left = -109.0
+offset_top = 1120.0
+offset_right = 763.0
+offset_bottom = 1124.0
+color = Color(0.6666667, 0.80784315, 0.10980392, 1)
+
+[node name="Label" type="Label" parent="BackgroundObjects/ColorRect2" unique_id=1619271498]
+z_index = 42
+layout_mode = 0
+offset_left = 278.0
+offset_top = -29.0
+offset_right = 673.0
+offset_bottom = -6.0
+text = "Recomended layer end (feel free to keep going tho)"
+
+[node name="Wall5" type="Sprite2D" parent="BackgroundObjects" unique_id=1715009868]
+z_index = 118
+position = Vector2(657, 2564.8857)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Wall6" type="Sprite2D" parent="BackgroundObjects" unique_id=1710429278]
+z_index = 118
+position = Vector2(61, 2564.8857)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Bg3" type="Sprite2D" parent="BackgroundObjects" unique_id=940365461]
+z_index = -2
+position = Vector2(360.00003, 2552.8857)
+scale = Vector2(0.60027856, 0.60027856)
+texture = ExtResource("4_1bvp3")
+
+[node name="Wall7" type="Sprite2D" parent="BackgroundObjects" unique_id=1569623951]
+z_index = 118
+position = Vector2(657, 3591.7715)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Wall8" type="Sprite2D" parent="BackgroundObjects" unique_id=1809667157]
+z_index = 118
+position = Vector2(61, 3591.7715)
+rotation = 3.1415927
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("3_h2yge")
+
+[node name="Bg4" type="Sprite2D" parent="BackgroundObjects" unique_id=920597212]
+z_index = -2
+position = Vector2(360.00003, 3579.7715)
+scale = Vector2(0.60027856, 0.60027856)
+texture = ExtResource("4_1bvp3")
+
+[node name="Label2" type="Label" parent="BackgroundObjects" unique_id=2015967304]
+offset_left = 1.0
+offset_top = 4224.0
+offset_right = 298.0
+offset_bottom = 4247.0
+text = "u can keep going past here but whys it so long ;-;"
+
+[node name="PlacedItems" type="Node2D" parent="." unique_id=1381557783]
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=945051590]
+z_index = 135
+custom_minimum_size = Vector2(718, 1026)
+offset_left = -51.0
+offset_top = -78.0
+offset_right = 718.0
+offset_bottom = 1056.0
+mouse_filter = 2
+border_width = 2.0
+editor_only = false
+
+[node name="Control" type="Control" parent="." unique_id=1859532545]
+custom_minimum_size = Vector2(1000, 1026)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 794.0
+offset_right = 1694.0
+offset_bottom = 1026.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=1080448111]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 171.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 21
+text = "Available Objects"
+
+[node name="Help" type="Label" parent="Control" unique_id=1590940469]
+z_index = 604
+layout_mode = 0
+offset_left = -241.0
+offset_top = 38.0
+offset_right = 416.0
+offset_bottom = 992.0
+theme_override_font_sizes/font_size = 21
+text = "NOTES:
+     - Drag objects from the right to create layer
+     - Each object has 3 variations you can cycle through with [R] 
+     - The very top is the start of the layer
+     - Autosave every 2m
+     - Please set the valid enter/exit positons on the top/bottom
+
+CONTROLS: 
+     L Click (hold) - pick up/hold obj
+     Scroll (w/o held item) - Move scene vertically
+     Tab - See collisions (Box at mouse cursor is player size when
+                falling, SHIFT to see player size when standing)
+     L - Set layer end at mouse position
+     NOTE: Cannot be above lowest object
+     B - Hide/show enter and exit buttons
+     Ctrl + S - Save
+     Ctrl + Shift + S - Save as
+     Ctrl + L  - Load save
+
+     R (w/ held item) - go thru sprite variations 
+     Backspace/del (w/ held item) - delete item
+     Scroll (w/ held item)  - scale item (use only a lil pls)
+     Q/E (w/ held item)  - Rotate L/R by 90 degrees
+     +/- (w/ held item) - change item render layer (shift = faster)
+     F (w/ held item) - Flip horizontal
+     V (w/ held item) - Flip verical
+     A/D (w/ held enemy) - Increase/decrease chance (shift = faster)
+
+     ESC - toggle this menu"
+
+[node name="Panel" type="Panel" parent="Control/Help" unique_id=1435068448]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -91.72748
+offset_bottom = -150.45117
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1835, 1.1835)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1bvp3")
+
+[node name="Panel2" type="Panel" parent="Control" unique_id=1334206553]
+z_index = -252
+z_as_relative = false
+custom_minimum_size = Vector2(804.3938, 817.06805)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.999971
+offset_top = 26.0
+offset_right = -169.07141
+offset_bottom = -177.86224
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1835, 1.1835)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lquwl")
+
+[node name="Button" type="Button" parent="Control" unique_id=471120745]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -54.0
+offset_right = -18.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5vw27")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7mycd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7mycd")
+disabled = true
+text = "Export to code (soon)"
+
+[node name="Screen" type="Control" parent="." unique_id=636450293]
+custom_minimum_size = Vector2(718, 1026)
+custom_maximum_size = Vector2(718, 1026)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ButtonMargins" type="MarginContainer" parent="Screen" unique_id=1407943102]
+custom_minimum_size = Vector2(718, 1026)
+custom_maximum_size = Vector2(718, 1026)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = -3
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = -3
+
+[node name="ExitButtons" type="HBoxContainer" parent="Screen/ButtonMargins" unique_id=1666990699]
+unique_name_in_owner = true
+z_index = 117
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="ExitLeft" type="Button" parent="Screen/ButtonMargins/ExitButtons" unique_id=712932996]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_lquwl")
+toggle_mode = true
+text = "Exit Left"
+
+[node name="ExitMiddle" type="Button" parent="Screen/ButtonMargins/ExitButtons" unique_id=1682721641]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_lquwl")
+toggle_mode = true
+text = "Exit Middle"
+
+[node name="ExitRight" type="Button" parent="Screen/ButtonMargins/ExitButtons" unique_id=711020112]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_lquwl")
+toggle_mode = true
+button_pressed = true
+text = "Exit Right"
+
+[connection signal="toggled" from="BackgroundObjects/ButtonMargins/EnterButtons/EnterLeft" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="BackgroundObjects/ButtonMargins/EnterButtons/EnterMiddle" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="BackgroundObjects/ButtonMargins/EnterButtons/EnterRight" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Screen/ButtonMargins/ExitButtons/ExitLeft" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Screen/ButtonMargins/ExitButtons/ExitMiddle" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="Screen/ButtonMargins/ExitButtons/ExitRight" to="." method="_on_button_toggled"]

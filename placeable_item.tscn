@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dfue8te8npdyf"]
+
+[ext_resource type="Script" uid="uid://cfipxkmcqohtp" path="res://placeable_item.gd" id="1_2kfl5"]
+[ext_resource type="Texture2D" uid="uid://bcnhj1etk1jo5" path="res://Objects/BigBlock3.png" id="2_esckm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ltx"]
+size = Vector2(380, 146)
+
+[node name="PlaceableItem" type="Area2D" unique_id=1562154576]
+script = ExtResource("1_2kfl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220460213]
+z_index = 1
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_f1ltx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1188457458]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_esckm")
+
+[node name="HitboxRect" type="ReferenceRect" parent="." unique_id=939879795]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+editor_only = false
